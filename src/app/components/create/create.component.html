@@ -1,0 +1,37 @@
+<div class="d-flex flex-column justify-content-center ml-5 mr-5">
+
+
+    <h4>CREAR NOU EMPLEAT</h4>
+
+    <label>Nom:</label>
+    <input type="text" [(ngModel)]="name">
+
+    <label>Feina:</label>
+    <select [(ngModel)]="job">
+     <option value="EMPLOYEE">Empleat</option>
+     <option value="MANAGER">Gerent</option>
+     <option value="BOSS">Director</option>
+     <option value="VOLUNTEER">Voluntari</option>
+   </select>
+
+
+    <button class="btn btn-info mt-2" (click)="createEmployee()">CREATE</button>
+
+    <table *ngIf="this.success==true && this.employee!=null"  class="table table-bordered mt-3">
+        <thead>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Job</td>
+            <td>Salary</td>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{employee.id}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.job}}</td>
+                <td>{{employee.salary}}</td>
+            </tr>
+        </tbody>
+    </table>
+   
+</div>

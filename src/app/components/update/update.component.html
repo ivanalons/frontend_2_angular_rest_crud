@@ -1,0 +1,43 @@
+<div class="d-flex flex-column justify-content-center ml-5 mr-5">
+
+
+    <h4>MODIFICAR EMPLEAT</h4>
+
+    <label>Id:</label>
+    <input type="number" [(ngModel)]="id">
+
+    <label>Nom:</label>
+    <input type="text" [(ngModel)]="name">
+
+    <label>Feina:</label>
+    <select [(ngModel)]="job">
+     <option value="EMPLOYEE">Empleat</option>
+     <option value="MANAGER">Gerent</option>
+     <option value="BOSS">Director</option>
+     <option value="VOLUNTEER">Voluntari</option>
+   </select>
+
+   <label>Salari:</label>
+   <input type="number" [(ngModel)]="salary">
+
+    <button class="btn btn-info mt-2" (click)="updateEmployee()">MODIFICAR</button>
+
+    <table *ngIf="this.success==true && this.updatedEmployee!=null"  class="table table-bordered mt-3">
+        <thead>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Job</td>
+            <td>Salary</td>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{updatedEmployee.id}}</td>
+                <td>{{updatedEmployee.name}}</td>
+                <td>{{updatedEmployee.job}}</td>
+                <td>{{updatedEmployee.salary}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="this.success==false">Error en la modificació de l'empleat</div>
+
+</div>

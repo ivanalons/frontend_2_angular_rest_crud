@@ -1,0 +1,15 @@
+<div class="d-flex flex-column justify-content-center ml-5 mr-5">
+
+
+    <h4>ELIMINAR EMPLEAT PER IDENTIFICADOR</h4>
+
+    <label>Id:</label>
+
+    <input type="text" [(ngModel)]="id">
+
+    <button class="btn btn-info mt-2" (click)="deleteById()">ELIMINAR</button>
+
+    <div *ngIf="this.success==true">Empleat amb id {{id}} eliminat correctament.</div>
+    <div *ngIf="this.success==false">No hay ningún empleado con id = {{id}}.</div>
+   
+</div>

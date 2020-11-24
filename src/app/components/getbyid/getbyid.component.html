@@ -1,0 +1,31 @@
+<div class="d-flex flex-column justify-content-center ml-5 mr-5">
+
+
+    <h4>CONSULTA EMPLEAT PER IDENTIFICADOR</h4>
+
+    <label>Id:</label>
+
+    <input type="text" [(ngModel)]="id">
+
+    <button class="btn btn-info mt-2" (click)="getEmployeeById()">CONSULTAR</button>
+
+    <table *ngIf="this.success==true && this.employee!=null"  class="table table-bordered mt-3">
+        <thead>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Job</td>
+            <td>Salary</td>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{employee.id}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.job}}</td>
+                <td>{{employee.salary}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="this.success==false">No hay ningún empleado con id = {{id}}</div>
+    <!-- <ng-template #elseBlock>No hay ningún empleado con id = {{id}}</ng-template> -->
+   
+</div>
